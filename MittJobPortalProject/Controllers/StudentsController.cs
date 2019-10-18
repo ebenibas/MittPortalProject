@@ -21,13 +21,13 @@ namespace MittJobPortalProject.Controllers
         }
 
         // GET: Students/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var student = db.Students.Find(id);
+            Student student = db.Students.Find(id);
             if (student == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace MittJobPortalProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName,Address,BirthDate,Gender,Contact,InstructorId")] Student student)
+        public ActionResult Create([Bind(Include = "Id,AppliacationUserId,Address,BirthDate,Gender,Contact,ApplicationUserId")] Student student)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(student);
+                db.Students.Add(student);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -59,13 +59,13 @@ namespace MittJobPortalProject.Controllers
         }
 
         // GET: Students/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var student = db.Students.Find(id);
+            Student student = db.Students.Find(id);
             if (student == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace MittJobPortalProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName,Address,BirthDate,Gender,Contact,InstructorId")] Student student)
+        public ActionResult Edit([Bind(Include = "Id,AppliacationUserId,Address,BirthDate,Gender,Contact,ApplicationUserId")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -90,13 +90,13 @@ namespace MittJobPortalProject.Controllers
         }
 
         // GET: Students/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var student = db.Students.Find(id);
+            Student student = db.Students.Find(id);
             if (student == null)
             {
                 return HttpNotFound();
@@ -107,10 +107,10 @@ namespace MittJobPortalProject.Controllers
         // POST: Students/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            var student = db.Students.Find(id);
-            db.Users.Remove(student);
+            Student student = db.Students.Find(id);
+            db.Students.Remove(student);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

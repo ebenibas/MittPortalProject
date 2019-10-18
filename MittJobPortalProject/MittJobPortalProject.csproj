@@ -181,9 +181,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910180607441_AddInitial.cs" />
-    <Compile Include="Migrations\201910180607441_AddInitial.Designer.cs">
-      <DependentUpon>201910180607441_AddInitial.cs</DependentUpon>
+    <Compile Include="Migrations\201910181921521_Initial.cs" />
+    <Compile Include="Migrations\201910181921521_Initial.Designer.cs">
+      <DependentUpon>201910181921521_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -446,11 +446,6 @@
     <Content Include="Views\Rounds\Details.cshtml" />
     <Content Include="Views\Rounds\Edit.cshtml" />
     <Content Include="Views\Rounds\Index.cshtml" />
-    <Content Include="Views\Students\Create.cshtml" />
-    <Content Include="Views\Students\Delete.cshtml" />
-    <Content Include="Views\Students\Details.cshtml" />
-    <Content Include="Views\Students\Edit.cshtml" />
-    <Content Include="Views\Students\Index.cshtml" />
     <Content Include="Views\Notifications\Create.cshtml" />
     <Content Include="Views\Notifications\Delete.cshtml" />
     <Content Include="Views\Notifications\Details.cshtml" />
@@ -469,7 +464,11 @@
     <Content Include="Views\Employers\MyJobPosts.cshtml" />
     <Content Include="Views\Instructors\DashBoard.cshtml" />
     <Content Include="Views\JobPosts\JobList.cshtml" />
-    <Content Include="Views\Students\DashBoard.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -488,8 +487,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910180607441_AddInitial.resx">
-      <DependentUpon>201910180607441_AddInitial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910181921521_Initial.resx">
+      <DependentUpon>201910181921521_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
