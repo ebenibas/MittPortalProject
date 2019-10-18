@@ -17,7 +17,7 @@ namespace MittJobPortalProject.Controllers
         // GET: Instructors
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            return View(db.Instructors.ToList());
         }
 
         // GET: Instructors/Details/5
